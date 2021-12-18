@@ -11,7 +11,6 @@ import pandas as pd
 from datetime import date
 
 # START MAIN FUNCTION
-@st.cache
 def solve(day, month):
     start = time.process_time()
     class Shape():
@@ -110,6 +109,7 @@ except:
 
 
 st.title('Kalender Puzzle')
+st.write('c Dr. Gressel')
 
 method = st.selectbox('Bitte auswählen', ('Neue Lösung berechnen', 'Lösung aus Datenbank laden'))
 today = date.today()
@@ -128,7 +128,7 @@ if method == 'Neue Lösung berechnen':
     	    
             P = RES[0].astype(np.int32)            
             
-            fig = px.imshow(P-1, color_continuous_scale = px.colors.qualitative.Plotly, height = 600, width = 600)
+            fig = px.imshow(P-1, color_continuous_scale = px.colors.qualitative.Plotly, height = 275, width = 275)
             fig.update_coloraxes(showscale = False)
             mm = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
             for cnt, m in enumerate(mm):
@@ -163,7 +163,7 @@ else:
         
         P = np.frombuffer(e[l][-1], dtype = np.int32).reshape([7, 7])
 
-        fig = px.imshow(P-1, color_continuous_scale = px.colors.qualitative.Plotly, height = 600, width = 600)
+        fig = px.imshow(P-1, color_continuous_scale = px.colors.qualitative.Plotly, height = 275, width = 275)
         fig.update_coloraxes(showscale = False)
         mm = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
         for cnt, m in enumerate(mm):
