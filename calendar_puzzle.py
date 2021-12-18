@@ -128,7 +128,7 @@ if method == 'Neue Lösung berechnen':
     	    
             P = RES[0].astype(np.int32)            
             
-            fig = px.imshow(P-1, color_continuous_scale = px.colors.qualitative.Plotly, height = 350, width = 350)
+            fig = px.imshow(P-1, color_continuous_scale = px.colors.qualitative.Plotly, height = 425, width = 425)
             fig.update_coloraxes(showscale = False)
             mm = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
             for cnt, m in enumerate(mm):
@@ -163,7 +163,7 @@ else:
         
         P = np.frombuffer(e[l][-1], dtype = np.int32).reshape([7, 7])
 
-        fig = px.imshow(P-1, color_continuous_scale = px.colors.qualitative.Plotly, height = 350, width = 350)
+        fig = px.imshow(P-1, color_continuous_scale = px.colors.qualitative.Plotly, height = 425, width = 425)
         fig.update_coloraxes(showscale = False)
         mm = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
         for cnt, m in enumerate(mm):
