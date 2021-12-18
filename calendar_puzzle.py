@@ -67,7 +67,7 @@ def solve(day, month):
     S.append(Shape(np.array([[1 ,1, 1],[1 ,0, 1]])))
     S.append(Shape(np.array([[0, 1],[0, 1],[0, 1],[1, 1]])))
 
-    shapes_to_place = 7
+    shapes_to_place = 8
     shape_order = np.arange(0, 8)
 
     month = [math.floor((month-1)/6), month - 6*math.floor((month-1)/6) - 1]
