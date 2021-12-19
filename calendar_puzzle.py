@@ -143,9 +143,10 @@ if method == 'Neue Lösung berechnen':
             sv = False
             for i in range(len(e)):
                 P_db = np.frombuffer(e[i][-1], dtype = np.int32).reshape([7, 7])
-                if P.all() == P_db.all():
+                if np.array_equal(P, P_db):
                     sv = True
                     st.write('Die gefundene Lösung ist in der Datenbank bereits vorhanden.')
+                    continue
             
             if sv == False:
                 st.write('Neue Lösung gefunden! Die Lösung wurde in der Datenbank gespeichert.')
